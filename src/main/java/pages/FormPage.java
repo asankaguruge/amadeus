@@ -21,13 +21,13 @@ public class FormPage {
 
     //Element locators
     //Fly from autocomplete field
-    private static String flyFromLocator = "//*[@name='flying-from']/div/input[@id='autocomplete-input']";
+    private static String flyFromLocator = "//*[@id='input-from']";
     //Fly to autocomplete field
-    private static String flyToLocator = "//*[@name='flying-to']/div/input[@id='autocomplete-input']";
+    private static String flyToLocator = "//*[@id='input-to']";
     //Search button
     private static String searchButtonLocator = "//input[@value='Search']";
     //Flight price
-    private static String flightPriceLocator = ".flight-price.text-6";
+    private static String flightPriceLocator = ".flight-price.text-9";
 
     public static void submitForm(WebDriver driver) throws InterruptedException {
 
@@ -40,14 +40,16 @@ public class FormPage {
 
         flyFrom.click();
         flyFrom.clear();
-        flyFrom.sendKeys("cmb");
+        flyFrom.sendKeys("colombo");
         sleep(2000);
+        flyFrom.sendKeys(Keys.RETURN);
         flyFrom.sendKeys(Keys.TAB);
 
         flyTo.click();
         flyTo.clear();
-        flyTo.sendKeys("mel");
+        flyTo.sendKeys("melbourne");
         sleep(2000);
+        flyTo.sendKeys(Keys.RETURN);
         flyTo.sendKeys(Keys.TAB);
         sleep(2000);
         searchButton.sendKeys(Keys.RETURN);

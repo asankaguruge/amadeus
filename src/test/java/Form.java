@@ -28,7 +28,7 @@ public class Form {
             formPage.waitForResults(driver);
 
             //Test if the correct price is displayed
-            assertEquals("€3,559", formPage.getPriceOfFirstListing(driver));
+            assertEquals("Rs175,082", formPage.getPriceOfFirstListing(driver));
 
         }catch(Exception e){
             e.printStackTrace();
